@@ -18,14 +18,25 @@ deadline.setSeconds(0);
 deadline.setMilliseconds(0);
 
 // creo timing function
-let countdown = setInterval(countdownFunction(deadline), 1000);
+let countdown = setTimeout(countdownFunction, 1000);
 
-function countdownFunction(end) {
-  let tempo = 2;
-  timeNow = new Date();
+// let countdown = setInterval(countdownFunction, 1000);
+
+function countdownFunction() {
+  console.log(timeNow);
   console.log(deadline);
-  //   if (tempo <= 0) {
-  //     clearInterval(countdown);
-  //     alert("tempo scaduto");
-  //   }
+
+  timeNow = new Date();
+  let milsNow = parseInt(Date.parse(timeNow));
+  let milsDeadline = parseInt(Date.parse(deadline));
+  console.log(Date.parse(milsNow));
+  console.log(Date.parse(milsDeadline));
+
+  let tempo = new Date(milsDeadline - milsNow);
+  console.log(tempo);
+
+  if (tempo <= 0) {
+    clearInterval(countdown);
+    alert("tempo scaduto");
+  }
 }
