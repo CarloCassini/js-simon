@@ -18,8 +18,9 @@ deadline.setSeconds(0);
 deadline.setMilliseconds(0);
 
 // creo timing function
-let countdown = setTimeout(countdownFunction, 1000);
-// let countdown = setInterval(countdownFunction, 1000);
+// let countdown = setTimeout(countdownFunction, 1000);
+let countdown = setInterval(countdownFunction, 1000);
+countdownFunction();
 
 function countdownFunction() {
   console.log(timeNow);
@@ -38,7 +39,6 @@ function countdownFunction() {
   // valorizzo la pagina web
   // giorni
   let CalcDays = Math.floor(restTime / 86400000);
-  let CalcDaysmils = restTime / 86400000;
   if (CalcDays < 10) {
     CalcDays = "0" + CalcDays;
   }
@@ -47,7 +47,6 @@ function countdownFunction() {
 
   // ore
   let calcHous = Math.floor(restTime / 3600000);
-  let calcHousmils = restTime / 3600000;
   if (calcHous < 10) {
     calcHous = "0" + calcHous;
   }
@@ -56,7 +55,6 @@ function countdownFunction() {
 
   // minuti
   let calcMins = Math.floor(restTime / 60000);
-  let calcMinsmils = restTime / 60000;
   if (calcMins < 10) {
     calcMins = "0" + calcMins;
   }
@@ -65,7 +63,6 @@ function countdownFunction() {
 
   // secondi
   let calcSecs = Math.floor(restTime / 1000);
-  let calcSecsmils = restTime / 1000;
   if (calcSecs < 10) {
     calcSecs = "0" + calcSecs;
   }
